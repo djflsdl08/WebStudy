@@ -1,0 +1,10 @@
+h1{
+	text-align: center;
+	color:pink;
+	text-shadow:2px 2px 2px black,0px 0px 5px darkblue; 
+}
+
+.shadow:hover{
+	cursor:pointer;
+	box-shadow : 5px 5px 5px black;
+}
