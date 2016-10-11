@@ -1,0 +1,91 @@
+
+@keyframes textColor {
+	0% {color:brown;}
+	50% {color:red;}
+	100% {color:green;}
+}
+
+body {
+	background-color: aliceblue;
+}
+
+h1 {
+	color : brown;
+	text-align: center;
+	animation-name:textColor;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+header {
+	border-bottom: 1px solid;
+	border-top-right-radius:50px;
+	border-top-left-radius:50px;
+	width:100%;
+	height:15%;
+	background:yellow;
+}
+
+nav {
+	width:25%;
+	height:93%;
+	float:left;
+	background:orange;
+}
+
+section {
+	width:75%;
+	height:93%;
+	float:left;
+	background:yellowgreen;
+}
+
+footer {
+	width:100%;
+	height:7%;
+	clear:both;
+	background:pink;
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+}
+
+ul {
+	border:dotted;
+	padding-right:10px;
+}
+
+ul li:hover {
+	background:pink;
+	padding:5px;
+
+}
+
+a {
+	text-decoration: none;
+}
+
+a#survey {
+	text-decoration: none;
+	color:red;
+}
+
+.subject:hover {
+	display:inline-block;
+	transform:rotate(180deg);
+}
+
+p {
+	font-family:휴먼편지체;
+	font-size : 1em;
+	text-indent: 1em;
+}
+
+h2 {
+	color:blue;
+	text-shadow:2px 2px skyblue;
+}
+
+td img:hover {
+	width:200;
+	height:300;
+}
