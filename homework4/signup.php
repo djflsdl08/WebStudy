@@ -23,7 +23,7 @@ $okay = preg_match('/^[0-9a-zA-Z]([\-.\w]*[0-9a-zA-Z\-_+])*@([0-9a-zA-Z][\-\w]*[
  	if(!$okay||!$okay_name){
 	$check = false; 
 	} 
-	if(!$check&&$okay_name){?>
+	if(!$check&&!$okay_name){?>
 
 <p class="title">Sorry</p>
     <p> You didn't provide a e-mail address.
