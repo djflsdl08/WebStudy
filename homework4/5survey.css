@@ -1,0 +1,33 @@
+@import url(5.css);
+
+@keyframes textAni {
+	0% {margin-left:30%;}
+	50% {margin-left:0%;}
+	100% {margin-left:30%;}
+}
+
+p#first {
+	animation-name:textAni;
+	animation-duration:5s;
+	animation-iteration-count: infinite;
+}
+
+input:hover, textarea:hover {
+	background:aliceblue;
+}
+
+textarea:focus {
+	font-size: 110%;
+}
+
+section {
+	background-color: yellowgreen;
+	margin:20px;
+	text-indent:1em;
+}
+
+.list {
+	color : blue;
+	font-weight:900;
+	padding:10px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>실습문제 5</title>
+<meta charset="UTF-8">
+<style>
+@keyframes animate {
+	0%{transform:rotate(0deg);}
+	100%{transform:rotate(360deg);}
+}
+@keyframes animate2 {
+	0%{transform:rotate(0deg);}
+	50%{transform:rotate(-90deg);}
+	100%{transform:rotate(90deg);}
+}
+img#num1 {
+	animation-duration: 1s;
+	animation-name: animate;
+	animation-iteration-count: infinite;
+}
+img#num2 {
+	animation-duration: 1s;
+	animation-name: animate2;
+	animation-iteration-count: infinite;
+}
+</style>
+</head>
+<body>
+<h2>어지러워요</h2>
+<hr>
+<h3>1) 1초에 1회전</h3>
+<img id="num1" src="sponge.png" width="200" height="200">
+<h3>2) 1초에 -90~90도 반복</h3>
+<img id="num2" src="sponge.png" width="200" height="200">
+</body>
+</html>
