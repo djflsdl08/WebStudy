@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실습</title>
+<script>
+function over(obj) {
+	obj.style.background="yellow";
+}
+function out(obj) {
+	obj.style.background = "pink";
+}
+function big(a,b) {
+	var c = parseInt(a);
+	var d = parseInt(b);
+	if(!isNaN(c)&&!isNaN(d)) {
+		if(c>d) return c;
+		else return d;
+	}
+}
+function pr(ch,n) {
+	for(i=0;i<n;i++) {
+		document.write(ch);
+	}
+}
+function equal(n) {
+	var last = n%10;
+	while(n>10) {
+		n = Math.floor(n/10);
+	}
+	if(last == n) {
+		return true;
+	}
+	else return false;
+}
+</script>
+</head>
+<body>
+<div id="box" onmouseover="over(this)" onmouseout="out(this)">
+여기에 마우스를 올리면 배경색이 노란색으로 바뀝니다.
+</div>
+<hr>
+<script>
+for(i=1;i<=5;i++) {
+	for(j=1;j<=i;j++)
+		document.write("*");
+	document.write("<br>");
+}
+</script>
+<hr>
+<script>
+document.write("<table border='1'>");
+	document.write("<tr><td><b>n</b></td>");
+	for(j=0;j<10;j++){
+		document.write("<td>"+j+"</td>");
+	}
+	document.write("</tr></tbody>");
+	document.write("<tr><td><b>n<sup>2</sup></b></td>");
+	for(j=0;j<10;j++){
+		document.write("<td>"+j*j+"</td>");
+	}
+	document.write("</tr></tbody>");
+document.write("</table>")
+</script>
+<hr>
+<script>
+var day = prompt("월화수목금토일 중 하루 입력");
+if(day==null) {
+	document.write("창 닫지 말고 입력하세요");
+}
+else if(day=="") {
+	document.write("입력하세요");
+}
+else {
+	switch(day) {
+		case "월":case "화":case "수":case "목":
+			document.write(day+"는 출근");break;
+		case "금":case "토":case "일":
+			document.write(day+"는 휴일");break;
+	}
+}
+</script>
+<hr>
+<script>
+var code = prompt("암호를 대라");
+if(code==null) {
+	document.write("창 닫지 말고 입력하세요");
+}
+else if(code=="") {
+	document.write("입력하세요");
+}
+else if(code=="you") {
+	document.write("통과!");
+}
+</script>
+<hr>
+<script>
+var b = big("625","555");
+document.write("max = " + b+"<br>");
+pr("%",5);
+</script>
+<hr>
+<script>
+var num = prompt("input number");
+if(equal(num)) {
+	document.write("같음");
+}
+else document.write("다름");
+</script>
+<hr>
+<script>
+var e = prompt("수식입력");
+document.write(eval(e));
+</script>
+</body>
+</html>
