@@ -4,7 +4,7 @@
 <title>Chap10-5</title>
 <meta charset="UTF-8">
 </head>
-<body ondblclick="changebackColor()">
+<body ondblclick="changeColor()">
 <h1>바탕 아무 곳에나 더블 클릭</h1>
 <hr>
 <p>바탕 아무 곳이나 <b>더블 클릭</b> 하면 배경색이 랜덤하게 변합니다.</p>
@@ -14,7 +14,7 @@ var red = Math.floor((Math.random()*255));
 var green = Math.floor((Math.random()*255));
 var blue = Math.floor((Math.random()*255));
 
-function changebackColor() {
+function changeColor() {
 	document.body.style.backgroundColor = rgb(red,green,blue);
 }
 
