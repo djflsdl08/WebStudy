@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<script>
+var newWin = null;
+var timerID = null;		// 여러개 만들 수 있어요
+function load(URL) {
+	if(newWin==null || newWin.closed) {
+	newWin = window.open(URL,"myWin","status,resizable,scrollbars");
+	}
+	else
+		newWin.location = URL;
+}
+
+function closeNewWindow() {
+	if(newWin==null || newWin.closed) return;
+	else newWin.close();
+}
+
+function over(time) {
+	timerID = setTimeout("autoload('http://www.naver.com')",time);
+	var div = document.getElementById("div");
+	div.title = "타이머 작동중";
+}
+
+function out() {
+	clearTimeout(timerID);
+}
+
+function autoload(URL) {
+	window.location = URL; // 현재 윈도우 변화
+}
+</script>
+<body>
+<a href="#" onclick="load('http://www.yahoo.com');return false">야후</a><br>
+<a href="#" onclick="load('http://www.naver.com');return false">네이버</a><br>
+<a href="#" onclick="closeNewWindow();return false;">닫기</a><br>
+<hr>
+<div id="div" onmouseover="over('5000')" onmouseout="out()">접속</div>
+<hr>
+<button onclick="window.moveBy(-10, 0)">left</button>
+<button onclick="window.moveBy(10, 0)">right</button>
+<button onclick="self.moveBy(0, -10)">up</button>
+<button onclick="moveBy(0, 10)">down</button>
+<button onclick="resizeBy(10, 10)">+</button>
+<button onclick="resizeBy(-10, -10)">-</button>
+<hr>
+<a href="javascript:window.print()">프린트</a>
+<hr>
+<button onclick="history.back()">back()으로 이전 페이지</button>
+<button onclick="history.forward()">forward()로 다음 페이지</button>
+<button onclick="history.go(-1)">go(-1)로 이전 페이지</button>
+<hr>
+<canvas id="canvas1" width="150" height="150" style="background-color: lightblue">
+</canvas>
+<canvas id = "canvas2" width="150" height="150" style="background-color:yellow">
+</canvas>
+<canvas id = "canvas3" width="150" height="150" style="background-color:violet">
+</canvas><br>
+<canvas id = "canvas4" width="460" height="150" style="background-color:pink">
+</canvas>
+<script>
+var canvas = document.getElementById("canvas4");
+var context = canvas.getContext("2d");
+
+context.fillStyle = "hotpink";
+context.fillRect(30,30,50,50);
+
+context.rect(60,60,50,50);
+context.strokeStyle="blue";
+context.stroke();
+
+context.beginPath();
+context.moveTo(120,20);
+context.lineTo(150,50);
+context.lineTo(250,20);
+//context.lineTo(120,20);
+context.strokeStyle = "green";
+context.lineWidth=20;
+context.closePath();
+context.stroke();
+
+context.beginPath();
+context.arc(300,70,30,0,1.5*Math.PI,false);
+context.strokeStyle="blue";
+context.stroke();
+
+context.beginPath();
+context.arc(340,100,40,0,1.5*Math.PI,true);
+context.strokeStyle="red";
+context.stroke();
+</script>
+</body>
+</html>

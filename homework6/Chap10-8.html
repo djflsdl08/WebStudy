@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chap10-8</title>
+<meta charset="UTF-8">
+<script>
+function size(obj) {
+	var idName = document.getElementById(obj.getAttribute('id'));
+	var bike = document.getElementById("bike");
+	var book = document.getElementById("book");
+	var triathlon = document.getElementById("triathlon");
+	var javascript = document.getElementById("javascript");
+	
+	idName.style.fontSize = 1.3+"em";
+	
+	switch(idName.getAttribute('id')) {
+		case "bike" : {
+			originallySize(book,triathlon,javascript);
+			break;
+		}
+		case "book" : {
+			originallySize(bike,triathlon,javascript);
+			break;
+		}
+		case "triathlon" : {
+			originallySize(bike,book,javascript);
+			break;
+		}
+		case "javascript" : {
+			originallySize(bike,book,triathlon);
+			break;
+		}
+	}
+}
+function originallySize(obj1,obj2,obj3) {
+	obj1.style.fontSize = 1 + "em";
+	obj2.style.fontSize = 1 + "em";
+	obj3.style.fontSize = 1 + "em";
+}
+</script>
+</head>
+<body>
+<h3>아이템을 클릭하면 1.3배 크기로</h3>
+<hr>
+<p id="p">여름 방학 때 하고 싶은 것들</p>
+<ul>
+	<li id="bike" onclick="size(this)">자전거로 대한민국 일주 </li>
+	<li id="book" onclick="size(this)">책 100권 읽기 </li>
+	<li id="triathlon" onclick="size(this)">철인 3종 경기 준비 </li>
+	<li id="javascript" onclick="size(this)">자바스크립트 정복 </li>
+</ul>
+</body>
+</html>

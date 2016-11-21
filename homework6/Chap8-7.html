@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chap8-7</title>
+<meta charset="UTF-8">
+<style>
+div {
+	display : inline-block;
+	width : 60px;
+	padding : 10px;
+}
+</style>
+<script>
+</script>
+</head>
+<body>
+<h1>17개의 CSS2 색이름과 색</h1>
+<hr>
+<script>
+var colorName = ["maroon","red","orange","yellow","olive",
+				 "purple","fuchsia","white","lime","green",
+				 "navy","blue","aqua","teal","black","silver","gray"];
+for(var i=0;i<17;i++) {
+	document.write("<div id='"+colorName[i]+"'>");
+	document.write(colorName[i]);
+	document.write("</div>");
+}
+for(var i=0;i<17;i++) {
+	var div = document.getElementById(colorName[i]);
+	div.style.background = colorName[i];
+}
+</script>
+</body>
+</html>
