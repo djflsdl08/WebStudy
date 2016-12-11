@@ -1,0 +1,14 @@
+input[type="text"] {
+	margin:5px;
+}
+table {
+	background-color: aliceblue;
+}
+#num {
+	border :2px solid yellowgreen;
+	background-color: 
+}
+#key {
+	text-align : center;
+	font-weight : bold;
+}
