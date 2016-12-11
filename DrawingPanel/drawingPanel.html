@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>그림판</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="drawingStyle.css">
+</head>
+<body>
+<h1>그림판입니다. 그림을 그려보세요.</h1>
+<hr>
+<table>
+<tr>
+	<script type="text/javascript" src="drawingColor1.js"></script>
+	<td colspan="2" align="center"><input id="myColor" type="color" onchange="f(this.value)"></td><td></td>
+	<td align="center" colspan="2"><span class="black">선굵기</span></td><td rowspan="2" id="selectColor" bgcolor="black"></td>
+	<td class="black">x = </td><td id="X" class="black"></td>
+</tr>
+<tr>
+	<script type="text/javascript" src="drawingColor2.js"></script>
+	<td class="white"></td><td class="white">c</td><td></td>
+	<td colspan="2"><input type="text" id="Lwidth" value="1" onchange="g(this.value)"></td><td class="black">y =</td><td id="Y" class="black"></td>
+</tr>
+</table>
+<br>
+<canvas id="myCanvas" style="background-color:aliceblue" width="500" height="420"></canvas>
+<script type="text/javascript" src="drawing.js"></script>
+</body>
+</html>

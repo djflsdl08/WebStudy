@@ -1,0 +1,16 @@
+table {
+	background-color: lightgray;
+}
+td {
+	width:25px;
+	color:white;
+}
+td.white {
+	background-color: white;
+}
+input[type=text] {
+	width:45px;
+}
+.black {
+	color:black;
+}
