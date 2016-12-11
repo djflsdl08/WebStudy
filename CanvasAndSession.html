@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>web</title>
+</head>
+<body>
+<h3>SESSION</h3>
+
+<form>
+Goods<input type="text" id="key">
+Number<input type="text" id="value">
+<button id="save" onclick="store()">Store</button>
+<button id="ret" onclick="retrieve()">Search</button>
+</form>
+<script>
+function store() {
+	if(!window.sessionStorage)
+		return;
+	var item = document.getElementById("key");
+	var count = document.getElementById("value");
+	sessionStorage.setItem(item.value,count.value);
+}
+function retrieve(){
+	if(!window.sessionStorage)
+		return;
+	var item = document.getElementById("key");
+	var n = sessionStorage.getItem(item.value);
+	var count = document.getElementById("value");
+	count.value = n;
+}
+</script>
+<hr><hr>
+<h3>Draw</h3>
+<canvas id="myCanvas" style="background-color:aliceblue" width="180" height="420"></canvas>
+<script>
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+
+context.fillStyle = "violet";
+context.fillRect(20,20,100,100);
+
+context.beginPath();
+context.rect(20,150,100,100);
+context.fillStyle = "violet";
+context.fill();
+
+context.strokeStyle = "gray";
+context.lineWidth = 10;
+context.stroke();
+
+context.beginPath();
+context.moveTo(80,340);
+context.arc(80,340,50,0,1.5*Math.PI);
+context.closePath();
+
+context.fillStyle = "yellowgreen";
+context.fill();
+
+context.strokeStyle="gray";
+context.lineWidth=20;
+context.stroke();
+
+context.font = "38px forte";
+context.strokeStyle = "green";
+context.lineWidth = 1;
+context.strokeText("Javascript",5,100);
+</script>
+<hr><hr>
+
+<h3>Draw2</h3>
+<canvas id="myCanvas2" style="background-color:aliceblue" width="180" height="420"></canvas>
+<form>
+<input id="myColor" type="color" value="#ff0000" onchange="f(this.value)">
+</form>
+<script>
+var canvas2 = document.getElementById("myCanvas2");
+var context2 = canvas2.getContext("2d");
+context2.strokeStyle = document.getElementById("myColor").value;
+context2.lineWidth=2;
+canvas2.addEventListener("mousedown",function(e){down(e)},false);
+canvas2.addEventListener("mouseup",function(e){up(e)},false);
+canvas2.addEventListener("mousemove",function(e){move(e)},false);
+canvas2.addEventListener("mouseout",function(e){out(e)},false);
+
+var startX=0,startY=0;
+var drawing = false;
+function down(e) {
+	startX = e.offsetX;
+	startY = e.offsetY;
+	drawing = true;
+}
+
+function move(e) {
+	if(!drawing)
+		return;
+	var curX = e.offsetX;
+	var curY = e.offsetY;
+	draw(curX,curY);
+	startX = curX;
+	startY = curY;
+}
+
+function draw(curX, curY) {
+	context2.beginPath();
+	context2.moveTo(startX,startY);
+	context2.lineTo(curX,curY);
+	context2.stroke();
+}
+
+function f(color) {
+	context2.strokeStyle = color;
+}
+
+function up(e) {
+	drawing = false;
+}
+
+function out(e) {
+	drawing = false;
+}
+</script>
+<hr><hr>
+
+<h3>Image</h3>
+<canvas id="myCanvas3" style="background-color:aliceblue" width="200" height="200"></canvas>
+
+<script>
+var canvas3 = document.getElementById("myCanvas3");
+var context3 = canvas3.getContext("2d");
+
+var img = new Image();
+img.src = "/Users/gim-yejin/Desktop/me.jpg";
+img.onload = function() {
+	context3.drawImage(img,30,30,150,150);
+}
+</script>
+</body>
+</html>
